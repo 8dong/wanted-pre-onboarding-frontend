@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import Button from '../atoms/Button';
 
-import type { TodoType } from '../../redux/slice/todoListSlice';
+import type { TodoType } from '../../../redux/slice/todoListSlice';
 
 const TodoItem = ({ todo }: { todo: TodoType }) => {
   return (

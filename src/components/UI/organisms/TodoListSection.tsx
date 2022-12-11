@@ -5,9 +5,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import TodoItem from '../molecules/TodoItem';
 import Button from '../atoms/Button';
 
-import todosSlice from '../../redux/slice/todoListSlice';
+import todosSlice from '../../../redux/slice/todoListSlice';
 
-import type { RootState } from '../../redux/store/store';
+import type { RootState } from '../../../redux/store/store';
 
 const TodoList = () => {
   const todoList = useSelector((store: RootState) => store.todoList);

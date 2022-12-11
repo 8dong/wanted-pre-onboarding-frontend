@@ -6,7 +6,7 @@ import { useDispatch } from 'react-redux';
 import LabeledInput from '../molecules/LabeledInput';
 import Button from '../atoms/Button';
 
-import authSlice from '../../redux/slice/authSlice';
+import authSlice from '../../../redux/slice/authSlice';
 
 const LoginForm = () => {
   const [emailValue, setEmailValue] = useState('');

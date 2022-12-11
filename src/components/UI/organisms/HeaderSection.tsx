@@ -4,9 +4,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from '../atoms/Button';
 import LogoText from '../atoms/LogoText';
 
-import authSlice from '../../redux/slice/authSlice';
+import authSlice from '../../../redux/slice/authSlice';
 
-import type { RootState } from '../../redux/store/store';
+import type { RootState } from '../../../redux/store/store';
 
 const HeaderSection = () => {
   const isAuthorized = useSelector((store: RootState) => store.auth);

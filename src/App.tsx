@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import LoginPage from './components/page/LoginPage';
 import TodoListPage from './components/page/TodoListPage';
 
-import type { RootState } from './components/redux/store/store';
+import type { RootState } from './redux/store/store';
 
 function App() {
   const isAuthorized = useSelector((store: RootState) => store.auth);
