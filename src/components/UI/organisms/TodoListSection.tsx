@@ -1,11 +1,13 @@
 import styled from 'styled-components';
-import { useCallback, useEffect } from 'react';
+import { useCallback, useEffect, useContext } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import TodoItem from '../molecules/TodoItem';
 import Button from '../atoms/Button';
+import ModalFormSection from './ModalFormSection';
 
 import todosSlice from '../../../redux/slice/todoListSlice';
+import ModalContext from '../../../context/modal/modalContext';
 
 import type { RootState } from '../../../redux/store/store';
 
@@ -37,11 +39,17 @@ const TodoList = () => {
     getTodosRequest();
   }, [getTodosRequest]);
 
+  const { showModalHandler } = useContext(ModalContext)!;
+
+  const hadleClickAddButton = () => {
+    showModalHandler(<ModalFormSection type='Add' />);
+  };
+
   return (
     <TodoListSectionWrapper>
       <h3>Todo List</h3>
       <div className='addButton'>
-        <Button bgColor='#0066ff' onClick={() => {}}>
+        <Button bgColor='#0066ff' onClick={hadleClickAddButton}>
           Add Todo
         </Button>
       </div>

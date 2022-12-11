@@ -1,16 +1,26 @@
 import styled from 'styled-components';
+import { useContext } from 'react';
 
 import Button from '../atoms/Button';
+import ModalFormSection from '../organisms/ModalFormSection';
+
+import ModalContext from '../../../context/modal/modalContext';
 
 import type { TodoType } from '../../../redux/slice/todoListSlice';
 
 const TodoItem = ({ todo }: { todo: TodoType }) => {
+  const { showModalHandler } = useContext(ModalContext)!;
+
+  const handleClickEditButton = () => {
+    showModalHandler(<ModalFormSection type='Edit' todo={todo} />);
+  };
+
   return (
     <TodoItemWrapper isCompleted={todo.isCompleted}>
       <strong className='todoText'>{todo.todo}</strong>
       <strong className='isCompleted'>{todo.isCompleted ? 'Completed' : 'Incomplete'}</strong>
       <div className='buttonGroup'>
-        <Button bgColor='#0066ff' onClick={() => {}}>
+        <Button bgColor='#0066ff' onClick={handleClickEditButton}>
           Edit
         </Button>
         <Button bgColor='#e74c3c' onClick={() => {}}>
