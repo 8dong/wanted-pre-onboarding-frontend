@@ -3,6 +3,7 @@ import { useContext } from 'react';
 
 import Button from '../atoms/Button';
 import ModalFormSection from '../organisms/ModalFormSection';
+import ModalDeleteConfirmSection from '../organisms/ModalDeleteConfirmSection';
 
 import ModalContext from '../../../context/modal/modalContext';
 
@@ -15,6 +16,10 @@ const TodoItem = ({ todo }: { todo: TodoType }) => {
     showModalHandler(<ModalFormSection type='Edit' todo={todo} />);
   };
 
+  const handleClickDeleteButton = () => {
+    showModalHandler(<ModalDeleteConfirmSection todoId={todo.id} />);
+  };
+
   return (
     <TodoItemWrapper isCompleted={todo.isCompleted}>
       <strong className='todoText'>{todo.todo}</strong>
@@ -23,7 +28,7 @@ const TodoItem = ({ todo }: { todo: TodoType }) => {
         <Button bgColor='#0066ff' onClick={handleClickEditButton}>
           Edit
         </Button>
-        <Button bgColor='#e74c3c' onClick={() => {}}>
+        <Button bgColor='#e74c3c' onClick={handleClickDeleteButton}>
           Delete
         </Button>
       </div>
