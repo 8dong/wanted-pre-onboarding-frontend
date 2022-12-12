@@ -47,6 +47,10 @@ atoms, molecules, organisms, layout, pages로 프로젝트를 구성하였습니
 
 모든 컴포넌트들은 styled-components 라이브러리를 사용하였으며 모든 CSS 스타일을 직접 작성하여 구성하였습니다.
 
+### API
+
+<a href="https://github.com/walking-sunset/selection-task#api">API 설명</a>
+
 ### 상태 관리
 
 - 인증 상태(auth)를 redux 전역 상태로 관리하여 구현하였습니다.
