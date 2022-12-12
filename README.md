@@ -4,7 +4,7 @@
 
 1. <code>npm i</code>
 
-2. <code>npm run dev</code>
+2. <code>npm run start</code>
 
 3. <a href="http://localhost:3000/" target="_blank">http://localhost:3000/</a> 접속
 
