@@ -108,7 +108,12 @@ const LoginForm = () => {
         </div>
       </div>
       <div className='buttonGroup'>
-        <Button bgColor='#38761d' type='submit' onClick={handleClickSignUpButton}>
+        <Button
+          bgColor='#38761d'
+          type='submit'
+          onClick={handleClickSignUpButton}
+          disabled={!formIsValid}
+        >
           Sign Up
         </Button>
         <Button
